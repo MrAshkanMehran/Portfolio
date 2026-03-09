@@ -3,120 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yatzee Casino Game – Ashkan Mehran</title>
-  <link rel="stylesheet" href="yatzee.css">
-    <!-- Font awesome preload-->
+  <title>Yatzee Game – Ashkan Mehran</title>
+  <link rel="stylesheet" href="../CSS/yatzee.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <!-- Header -->
   <header class="column-header">
     <div class="logo-wrap">
-    <a href="../Portfolio/portfolio.html">
-      <img src="../Portfolio/Images/hero-portrait.jpg" alt="Logo" class="logo"></a>
+      <a href="../index.html"><img src="../Images/hero-portrait.jpg" alt="Logo" class="logo"></a>
     </div>
     <nav class="main-nav">
       <ul>
-        <li><a href="../Portfolio/portfolio.html#hero">Home</a></li>
-        <li><a href="../Portfolio/portfolio.html#projects">Back to Projects</a></li>
+        <li><a href="../index.html#hero">Home</a></li>
+        <li><a href="../index.html#projects">Back to Projects</a></li>
       </ul>
-    </nav>        
+    </nav>
   </header>
 
-  <!-- Project Content -->
-  <main class="project-detail container">
-    <div class="project-preview">
-
-      <!-- Project Title & Description -->
-      <div class="project-info">
-        <h2>Yatzee Casino Game</h2>
-        <p>A browser-based dice game inspired by the classic Yahtzee experience. Built with JavaScript, HTML, and CSS, featuring interactive gameplay, dynamic scoring, and a sleek gold-and-black casino theme.</p>
+  <div id="site">
+    <main class="container">
+      <h1 class="pagetitle"><b>Yatzee Casino Game</b></h1>
+      <div class="project-description center-text">
+        <p>A fully interactive Yatzee game built with JavaScript and CSS for a smooth browser-based experience.</p>
       </div>
+      <!-- Game HTML / Canvas -->
+    </main>
+  </div>
 
-      <!-- Yatzee Game Wrapper -->
-      <div class="yatzee-wrapper">
-
-        <div class="gametitle-wrapper">
-          <div class="animated-dice">🎲</div>
-          <h1 class="gametitle">Yatzee Casino</h1>
-          <div class="animated-dice">🎲</div>
-        </div>
-
-        <button class="btn center-btn" id="rules-btn">Show Rules</button>
-
-        <div class="rules-container" id="rules-container">
-          <h2>Rules</h2>
-          <ul>
-            <li>Six rounds total.</li>
-            <li>Roll up to three times per round.</li>
-            <li>Click dice to hold them between rolls.</li>
-            <li>Select a scoring option or roll again.</li>
-          </ul>
-          <h2>Points</h2>
-          <ul>
-            <li>Three of a kind: Sum of all dice</li>
-            <li>Four of a kind: Sum of all dice</li>
-            <li>Full house: 25 points</li>
-            <li>Small straight: 30 points</li>
-            <li>Large straight: 40 points</li>
-          </ul>
-        </div>
-
-        <div id="dice">
-          <div class="die">⚀</div>
-          <div class="die">⚀</div>
-          <div class="die">⚀</div>
-          <div class="die">⚀</div>
-          <div class="die">⚀</div>
-        </div>
-
-        <p class="rounds-text center-text">
-          <strong>Rolls:</strong> <span id="current-rolls">0</span> |
-          <strong>Round:</strong> <span id="current-round">1</span>
-        </p>
-
-        <div id="score-options">
-          <div><input type="radio" name="score" id="three-of-a-kind" disabled><label for="three-of-a-kind">Three of a kind <span></span></label></div>
-          <div><input type="radio" name="score" id="four-of-a-kind" disabled><label for="four-of-a-kind">Four of a kind <span></span></label></div>
-          <div><input type="radio" name="score" id="full-house" disabled><label for="full-house">Full house <span></span></label></div>
-          <div><input type="radio" name="score" id="small-straight" disabled><label for="small-straight">Small straight <span></span></label></div>
-          <div><input type="radio" name="score" id="large-straight" disabled><label for="large-straight">Large straight <span></span></label></div>
-          <div><input type="radio" name="score" id="none" disabled><label for="none">None <span></span></label></div>
-        </div>
-
-        <div class="center-buttons">
-          <button class="btn" id="roll-btn">Roll Dice 🎲</button>
-          <button class="btn" id="keep-btn">Keep Score 💰</button>
-        </div>
-
-        <audio id="dice-sound" src="https://www.fesliyanstudios.com/play-mp3/6431" preload="auto"></audio>
-        <audio id="score-sound" src="https://www.fesliyanstudios.com/play-mp3/387" preload="auto"></audio>
-
-        <div id="scores">
-          <h3>Total Score: <span id="total-score">0</span></h3>
-          <ol id="score-history"></ol>
-        </div>
-
+  <footer class="site-footer">
+    <div class="footer-inner container">
+      <div class="footer-center">
+        <p>© <span id="year"></span> Ashkan Mehran. All Rights Reserved.</p>
       </div>
-    </div>
-  </main>
-
-    <!-- ================= FOOTER ================= -->
-    <footer class="site-footer">
-      <div class="footer-inner container">
-        <div class="footer-center">
-          <p>© <span id="year"></span> Ashkan Mehran. All Rights Reserved.</p>
-        </div>
-        <div class="footer-right">
+      <div class="footer-right">
         <a href="https://www.facebook.com/MrAshkanMehran" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
         <a href="https://x.com/ashkan_mehran" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
-        </div>
       </div>
-    </footer>
+    </div>
+  </footer>
+
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-
-  <script src="yatzee.js"></script>
 </body>
 </html>

@@ -14,7 +14,7 @@
   <!-- Theme color for mobile -->
   <meta name="theme-color" content="#b5852f">
 
-  <!-- Font awesome preload-->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -55,13 +55,10 @@
       <!-- ================= HERO / INTRO ================= -->
       <section id="hero" class="hero">
         <div class="hero-inner">
-          <!-- Left: Text -->
           <div class="hero-text">
             <h2 class="hero-title">Ashkan Mehran - <span>Web Developer</span></h2>
             <p class="hero-welcome">Welcome to my portfolio</p>
           </div>
-
-          <!-- Right: Portrait -->
           <div class="hero-portrait">
             <img src="Images/side-pic.jpg" alt="Ashkan Portrait">
           </div>
@@ -74,14 +71,10 @@
       <section id="about" class="section about">
         <div class="container">
           <div class="about-grid">
-
-            <!-- Images -->
             <div class="about-images">
               <img src="Images/about-small-1.jpg" alt="About photo 1" class="about-small" loading="lazy">
               <img src="Images/about-small-2.jpg" alt="About photo 2" class="about-small" loading="lazy">
             </div>
-
-            <!-- Text Content -->
             <div class="about-content">
               <h3>About Me</h3>
               <p>
@@ -93,7 +86,6 @@
               <p class="cvinfo">Please check out my CV:</p>
               <a id="downloadBtn" href="Images/AM-CV.pdf" download="Ashkan_Mehran_CV.pdf" class="btn-primary">Download CV</a>
             </div>
-
           </div>
         </div>
       </section>
@@ -104,8 +96,6 @@
       <section id="projects" class="section projects">
         <h3 class="section-title">Projects</h3>
         <div class="projects-grid">
-
-          <!-- Project 1 -->
           <a href="Survey Form/survey.html" class="project-card">
             <img src="Images/survey-thumbnail.png" alt="Survey Form Thumbnail" loading="lazy">
             <div class="project-info">
@@ -113,8 +103,6 @@
               <p>Responsive and accessible form built with HTML, CSS, and JavaScript.</p>
             </div>
           </a>
-
-          <!-- Project 2 -->
           <a href="Landing Page/landing.html" class="project-card">
             <img src="Images/landing-thumbnail.png" alt="Landing Page Thumbnail" loading="lazy">
             <div class="project-info">
@@ -122,8 +110,6 @@
               <p>A modern landing page designed for elegance, clarity, and flow.</p>
             </div>
           </a>
-
-          <!-- Project 3 -->
           <a href="Yatzee Game/yatzee.html" class="project-card">
             <img src="Images/yatzee-thumbnail.png" alt="Yatzee Game Thumbnail" loading="lazy">
             <div class="project-info">
@@ -131,7 +117,6 @@
               <p>A browser-based dice game with custom JavaScript logic and animations.</p>
             </div>
           </a>
-
         </div>
       </section>
 
@@ -142,31 +127,26 @@
         <div class="container">
           <h3 class="section-title">Why Choose Me?</h3>
           <div class="features-grid">
-
             <div class="feature">
               <img src="Images/HTML.png" alt="Responsive Web Design" loading="lazy">
               <h4>Responsive Web Design</h4>
               <p>Mobile-first, accessible, and performant layouts.</p>
             </div>
-
             <div class="feature">
               <img src="Images/JAVASCRIPT.png" alt="JavaScript" loading="lazy">
               <h4>JavaScript Algorithms</h4>
               <p>Clean, tested logic for interactive UI and tooling.</p>
             </div>
-
             <div class="feature">
               <img src="Images/FRONTEND.png" alt="Front End Libraries" loading="lazy">
               <h4>Front End Libraries</h4>
               <p>React / Vue-friendly code and modern tooling.</p>
             </div>
-
             <div class="feature">
               <img src="Images/BACKEND.png" alt="Back End APIs" loading="lazy">
               <h4>Back End APIs</h4>
               <p>Integration-ready endpoints, database-aware design.</p>
             </div>
-
           </div>
         </div>
       </section>
@@ -178,24 +158,20 @@
         <div class="container">
           <h3 class="section-title">Enquiries</h3>
           <div class="contact-wrap">
-
             <form id="contact-form" action="https://formspree.io/f/xdawaowq" method="POST" class="form-dark contact-form">
               <div class="form-row">
                 <label>First Name <input type="text" name="firstName" id="firstName" required></label>
                 <label>Last Name <input type="text" name="lastName" id="lastName" required></label>
               </div>
-
               <label>Email <input type="email" name="email" id="contactEmail" required></label>
               <label>Subject <input type="text" name="subject" id="contactSubject"></label>
               <label>Your Message <textarea name="message" id="contactMessage" rows="5" required></textarea></label>
-
               <div class="form-actions">
                 <button type="submit" class="btn-primary">Send Enquiry</button>
                 <span class="form-status" id="form-status" aria-live="polite"></span>
               </div>
               <p>I usually reply within 24 hours. Let’s build something great.</p>
             </form>
-
           </div>
         </div>
       </section>
@@ -209,17 +185,19 @@
           <p>© <span id="year"></span> Ashkan Mehran. All Rights Reserved.</p>
         </div>
         <div class="footer-right">
-        <a href="https://www.facebook.com/MrAshkanMehran" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://x.com/ashkan_mehran" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.facebook.com/MrAshkanMehran" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://x.com/ashkan_mehran" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
         </div>
       </div>
     </footer>
+
+    <!-- Scripts -->
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
     </script>
-  </div> <!-- /site -->
+    <!-- Main JS -->
+    <script src="JS/portfolio.js"></script>
 
-  <!-- MAIN JS -->
-  <script src="portfolio.js"></script>
+  </div> <!-- /site -->
 </body>
 </html>

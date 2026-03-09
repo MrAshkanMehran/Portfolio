@@ -2,8 +2,8 @@
 const rulesBtn = document.getElementById('rules-btn');
 const rulesContainer = document.querySelector('.rules-container');
 rulesBtn.addEventListener('click',()=>{ 
-rulesContainer.style.display=(rulesContainer.style.display==='block')?'none':'block'; 
-rulesBtn.textContent=(rulesContainer.style.display==='block')?'Hide Rules':'Show Rules';
+  rulesContainer.style.display=(rulesContainer.style.display==='block')?'none':'block'; 
+  rulesBtn.textContent=(rulesContainer.style.display==='block')?'Hide Rules':'Show Rules';
 });
 
 // Dice logic
@@ -65,11 +65,9 @@ const panels = document.querySelectorAll('.panel');
 
 tabs.forEach(tab => {
   tab.addEventListener('click', () => {
-    // remove active class from all tabs and panels
     tabs.forEach(t => t.classList.remove('active'));
     panels.forEach(p => p.classList.remove('active'));
 
-    // add active class to clicked tab and corresponding panel
     tab.classList.add('active');
     const target = tab.dataset.target;
     const panel = document.getElementById(target);
@@ -78,33 +76,29 @@ tabs.forEach(tab => {
 });
 
 // Contact Form Handling
-
 const form = document.getElementById("contact-form");
 const status = document.getElementById("form-status");
 
 if (form) {
   form.addEventListener("submit", function (event) {
     event.preventDefault(); // Stops the page from reloading when the form is submitted
-
-    const data = new FormData(form); // Collects the form input values
+    const data = new FormData(form);
 
     fetch(form.action, {
       method: form.method,
       body: data,
-      headers: {
-        Accept: "application/json"
+      headers: { Accept: "application/json" }
+    })
+    .then(response => {
+      if (response.ok) {
+        status.textContent = "Thanks! Your message has been sent.";
+        form.reset();
+      } else {
+        status.textContent = "Oops! There was a problem sending your message.";
       }
     })
-      .then(response => {
-        if (response.ok) {
-          status.textContent = "Thanks! Your message has been sent.";
-          form.reset(); // Clears the form fields
-        } else {
-          status.textContent = "Oops! There was a problem sending your message.";
-        }
-      })
-      .catch(() => {
-        status.textContent = "Oops! There was a problem sending your message.";
-      });
+    .catch(() => {
+      status.textContent = "Oops! There was a problem sending your message.";
+    });
   });
 }

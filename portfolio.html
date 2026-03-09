@@ -1,0 +1,229 @@
+<!--
+  portfolio.html
+  Cleaned and reorganized version.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ashkan Mehran — Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="portfolio.css">
+
+  <!-- Theme color for mobile -->
+  <meta name="theme-color" content="#b5852f">
+  <!-- Font awesome preload-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- SITE WRAPPER --> 
+  <div id="site">
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <main class="content-wrapper">
+
+      <!-- ================= HEADER ================= -->
+      <header class="column-header">
+        <!-- Logo -->
+        <div class="logo-wrap">
+          <img src="portfolio_files/hero-portrait.jpg" alt="Ashkan Mehran Logo" class="logo" loading="lazy">
+        </div>
+
+        <!-- Navigation Menu -->
+        <div class="nav-contact-wrapper">
+          <nav class="main-nav">
+            <ul>
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#why">Why Choose Me</a></li>
+              <li><a href="#enquiries">Contact</a></li>
+            </ul>
+          </nav>
+
+          <!-- Contact Icons -->
+          <div class="contact-icons">
+            <a href="mailto:ashkan_mehran@hotmail.com"><img src="portfolio_files/email.png" alt="Email"></a>
+            <a href="tel:+447904156218"><img src="portfolio_files/telephone.png" alt="Phone"></a>
+            <a href="https://www.linkedin.com/in/ashkan-mehran-b5759971/" target="_blank" rel="noopener"><img src="portfolio_files/linkedin.png" alt="LinkedIn"></a>
+          </div>
+        </div>
+      </header>
+
+      <!-- ================= HERO / INTRO ================= -->
+      <section id="hero" class="hero">
+        <div class="hero-inner">
+          <!-- Left: Text -->
+          <div class="hero-text">
+            <h2 class="hero-title">Ashkan Mehran - <span>Web Developer</span></h2>
+            <p class="hero-welcome">Welcome to my portfolio</p>
+          </div>
+
+          <!-- Right: Portrait -->
+          <div class="hero-portrait">
+            <img src="portfolio_files/side-pic.jpg" alt="Ashkan Portrait">
+          </div>
+        </div>
+      </section>
+
+      <hr class="section-separator">
+
+      <!-- ================= ABOUT ================= -->
+      <section id="about" class="section about">
+        <div class="container">
+          <div class="about-grid">
+
+            <!-- Images -->
+            <div class="about-images">
+              <img src="portfolio_files/about-small-1.jpg" alt="About photo 1" class="about-small" loading="lazy">
+              <img src="portfolio_files/about-small-2.jpg" alt="About photo 2" class="about-small" loading="lazy">
+            </div>
+
+            <!-- Text Content -->
+            <div class="about-content">
+              <h3>About Me</h3>
+              <p>
+                Hi! I'm Ashkan — a Web Developer with a practical mindset championing
+                attention to design and performance. I build responsive, accessible websites,
+                and take pride in clean code that makes all the difference. If you're seeking
+                a reliable and robust product, please get in touch for a consultation.
+              </p>
+              <p class="cvinfo">Please check out my CV:</p>
+              <a id="downloadBtn" href="portfolio_files/AM-CV.pdf" download="Ashkan_Mehran_CV.pdf" class="btn-primary">Download CV</a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <hr class="section-separator">
+
+      <!-- ================= PROJECTS ================= -->
+      <section id="projects" class="section projects">
+        <h3 class="section-title">Projects</h3>
+        <div class="projects-grid">
+
+          <!-- Project 1 -->
+          <a href="../Survey%20Form/survey.html" class="project-card">
+            <img src="portfolio_files/survey-thumbnail.png" alt="Survey Form Thumbnail" loading="lazy">
+            <div class="project-info">
+              <h4>Survey Form</h4>
+              <p>Responsive and accessible form built with HTML, CSS, and JavaScript.</p>
+            </div>
+          </a>
+
+          <!-- Project 2 -->
+          <a href="../Landing%20Page/landing.html" class="project-card">
+            <img src="portfolio_files/landing-thumbnail.png" alt="Landing Page Thumbnail" loading="lazy">
+            <div class="project-info">
+              <h4>Landing Page</h4>
+              <p>A modern landing page designed for elegance, clarity, and flow.</p>
+            </div>
+          </a>
+
+          <!-- Project 3 -->
+          <a href="../Yatzee%20Game/yatzee.html" class="project-card">
+            <img src="portfolio_files/yatzee-thumbnail.png" alt="Yatzee Game Thumbnail" loading="lazy">
+            <div class="project-info">
+              <h4>Yatzee Casino</h4>
+              <p>A browser-based dice game with custom JavaScript logic and animations.</p>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <hr class="section-separator">
+
+      <!-- ================= WHY CHOOSE ME ================= -->
+      <section id="why" class="section why">
+        <div class="container">
+          <h3 class="section-title">Why Choose Me?</h3>
+          <div class="features-grid">
+
+            <div class="feature">
+              <img src="portfolio_files/HTML.png" alt="Responsive Web Design" loading="lazy">
+              <h4>Responsive Web Design</h4>
+              <p>Mobile-first, accessible, and performant layouts.</p>
+            </div>
+
+            <div class="feature">
+              <img src="portfolio_files/JAVASCRIPT.png" alt="JavaScript" loading="lazy">
+              <h4>JavaScript Algorithms</h4>
+              <p>Clean, tested logic for interactive UI and tooling.</p>
+            </div>
+
+            <div class="feature">
+              <img src="portfolio_files/FRONTEND.png" alt="Front End Libraries" loading="lazy">
+              <h4>Front End Libraries</h4>
+              <p>React / Vue-friendly code and modern tooling.</p>
+            </div>
+
+            <div class="feature">
+              <img src="portfolio_files/BACKEND.png" alt="Back End APIs" loading="lazy">
+              <h4>Back End APIs</h4>
+              <p>Integration-ready endpoints, database-aware design.</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <hr class="section-separator">
+
+      <!-- ================= CONTACT / ENQUIRIES ================= -->
+      <section id="enquiries" class="section contact">
+        <div class="container">
+          <h3 class="section-title">Enquiries</h3>
+          <div class="contact-wrap">
+
+            <form id="contact-form" action="https://formspree.io/f/xdawaowq" method="POST" class="form-dark contact-form">
+              <div class="form-row">
+                <label>First Name <input type="text" name="firstName" id="firstName" required></label>
+                <label>Last Name <input type="text" name="lastName" id="lastName" required></label>
+              </div>
+
+              <label>Email <input type="email" name="email" id="contactEmail" required></label>
+              <label>Subject <input type="text" name="subject" id="contactSubject"></label>
+              <label>Your Message <textarea name="message" id="contactMessage" rows="5" required></textarea></label>
+
+              <div class="form-actions">
+                <button type="submit" class="btn-primary">Send Enquiry</button>
+                <span class="form-status" id="form-status" aria-live="polite"></span>
+              </div>
+              <p>I usually reply within 24 hours. Let’s build something great.</p>
+            </form>
+
+          </div>
+        </div>
+      </section>
+
+    </main> <!-- /content-wrapper -->
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+      <div class="footer-inner container">
+        <div class="footer-center">
+          <p>© <span id="year"></span> Ashkan Mehran. All Rights Reserved.</p>
+        </div>
+        <div class="footer-right">
+        <a href="https://www.facebook.com/MrAshkanMehran" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com/ashkan_mehran" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </footer>
+     <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  </div> <!-- /site -->
+
+  <!-- MAIN JS -->
+  <script src="portfolio.js"></script>
+</body>
+</html>

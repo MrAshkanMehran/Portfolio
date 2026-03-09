@@ -1,0 +1,421 @@
+/* ================== GLOBAL ================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: block;
+  flex-direction: column;
+  font-family: 'Arial', sans-serif;
+  background-color: #0a0a0a;
+  background-image: radial-gradient(circle at 50% 20%, #111 0%, #000 100%);
+  color: #fff;
+  flex-direction: column;
+  overflow-x: hidden;
+  min-height: 100vh;   /* ensures full viewport height */
+  margin: 0;
+  font-size: 18px;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* ================== CASINO BACKGROUND PATTERN ================== */
+main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.02) 10px,
+    rgba(255, 0, 0, 0.03) 10px,
+    rgba(255, 0, 0, 0.03) 20px
+  );
+  z-index: -1;
+  opacity: 0.4;
+  
+}
+
+/* ================== HEADER ================== */
+.column-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 20px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(208, 151, 107, 0.938);
+  backdrop-filter: blur(10px);
+  padding: 12px 25px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  margin-bottom: 3rem;
+  z-index: 999;
+}
+
+/* Navigation Bar  */
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation Bar Menu Options*/
+
+.column-header .main-nav ul li a {
+  position: relative;
+  text-decoration: none;
+  color: #111;
+  padding-bottom: 4px;
+  font-weight: 600;
+}
+
+.column-header .main-nav ul li a::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #b5852f;
+  transition: width 0.3s ease; 
+}
+
+.column-header .main-nav ul li a:hover::after{
+  width: 100%; /* makes the line animate across */
+}
+.column-header .main-nav ul li a:hover {
+  color: #777777;
+}
+
+.logo{
+  width: 200px;
+  height: 160px;
+  margin-top: 1rem;
+}
+
+.column-header .pagetitle {
+  font-size: 2.8rem;
+  font-family: "LoungeBait", serif;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #d4af37 0%, #ffdf7e 50%, #d4af37 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 6s linear infinite;
+}
+
+@keyframes shine {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+@media(max-width:700px) {
+  .column-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .column-header nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* ================== RULES ================== */
+.rules-container {
+  display: none;
+  background-color: #1a1a1a;
+  color: #fff;
+  width: 90%;
+  max-width: 600px;
+  margin: 10px auto;
+  padding: 15px;
+  border-radius: 10px;
+  overflow-y: auto;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+  border: 1px solid #b8860b;
+  text-align: left;
+}
+
+.rules-container h2 {
+  color: #ff3333;
+  margin-bottom: 5px;
+}
+
+.rules-container ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+/* ================== BUTTONS ================== */
+.btn {
+  cursor: pointer;
+  padding: 8px 15px;  /* condensed */
+  margin: 5px;
+  border: 2px solid #d4af37;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.9rem;   /* smaller */
+  color: #fff;
+  background: linear-gradient(145deg, #111 0%, #000 100%);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3),
+              inset 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.btn:hover {
+  background: linear-gradient(145deg, #ff3333, #d4af37);
+  color: #000;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.7),
+              0 0 40px rgba(255, 51, 51, 0.6);
+  transform: translateY(-3px);
+}
+
+/* ================== MAIN ================== */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* keeps game content at top of main */
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: rgba(17, 17, 17, 0.95);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.4),
+              inset 0 0 15px rgba(255, 51, 51, 0.1);
+  border: 1px solid #b8860b;
+  backdrop-filter: blur(5px);
+  position: relative;
+  z-index: 1; /* keeps it above background effects */
+}
+
+/* ================== DICE ================== */
+#dice {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.die {
+  width: 55px;
+  height: 55px;
+  border: 3px solid #d4af37;
+  border-radius: 10px;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.3),
+              inset 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.die.held {
+  border-color: #ff3333;
+  background-color: #440000;
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgba(255, 51, 51, 0.6);
+}
+
+.die:hover {
+  transform: rotate(15deg) scale(1.05);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.8),
+              0 0 40px rgba(255, 51, 51, 0.5);
+}
+
+/* ================== SCORE OPTIONS ================== */
+#score-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 10px;
+  width: 100%;
+
+}
+
+#score-options div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #d4af37;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+#score-options label {
+  color: #fff;
+}
+
+#score-options input[type="radio"]:disabled + label {
+  color: #777;
+}
+
+/* ================== SCORE HISTORY ================== */
+#scores {
+  display: block;
+  margin: 2rem auto 1rem auto; /* top auto bottom auto margins keep it centered */
+  width: fit-content;
+  text-align: center;
+  background: rgba(17, 17, 17, 0.95);
+  border: 1px solid #b8860b;
+  border-radius: 10px;
+  padding: 10px 25px;
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.4),
+              inset 0 0 10px rgba(255, 51, 51, 0.2);
+}
+
+
+#scores h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #d4af37;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.8),
+               0 0 20px rgba(255, 51, 51, 0.4);
+  letter-spacing: 1px;
+}
+
+#scores span {
+  color: #ff3333;
+  font-size: 1.6rem;
+  font-weight: 900;
+  text-shadow: 0 0 8px rgba(255, 51, 51, 0.6);
+}
+
+#score-history {
+   margin-top: 10px;
+  list-style-position: inside;
+  color: #ff3333;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.4);
+
+  /* Center the list items */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 0; /* remove default indent */
+}
+
+/* ================== ROUND INFO ================== */
+.rounds-text {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #d4af37;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+}
+
+/* ================== GAME TITLE ================== */
+.gametitle {
+  font-size: 5rem;
+  font-family: "LoungeBait", sans-serif;
+  color: #d4af37;
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.8),
+               0 0 40px rgba(255, 51, 51, 0.4);
+  
+}
+
+/* ================== CENTERING CLASSES ================== */
+.center-text { text-align: center; }
+.center-btn { display: block; margin: 15px auto; }
+.center-buttons { display: flex; justify-content: center; gap: 15px; margin: 15px 0; }
+
+/* ================== ANIMATED DICE ================== */
+.gametitle-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.animated-dice {
+  font-size: 2rem;
+  animation: float 1.2s ease-in-out infinite alternate;
+}
+
+.animated-dice:nth-child(1) { animation-delay: 0s; }
+.animated-dice:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-15px); }
+}
+
+.die.rolling {
+  animation: shake 0.6s ease;
+}
+
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(15deg); }
+  50% { transform: rotate(-15deg); }
+  75% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* ================== FONT ================== */
+@font-face {
+  font-family: "LoungeBait";
+  src: url("Fonts/LoungeBait-JpVa.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ================== RESPONSIVE ================== */
+@media(max-width:600px) {
+  .die { width: 45px; height: 45px; font-size: 1.5rem; }
+  .btn { padding: 6px 12px; font-size: 0.8rem; }
+  .gametitle { font-size: 2rem; }
+  .animated-dice { font-size: 1.5rem; }
+}
+
+/* ------------------------- Footer ------------------------- */
+.site-footer {
+  margin-top: 4rem;
+  background: #2b2b2e;
+  color: #fff;
+  padding: 18px 0 36px;
+  border-top: 4px solid #b5852f;
+}
+.footer-inner { display: flex; flex-direction: column; align-items: center; justify-content: space-between; font-size: 1rem;}
+
+#score{
+  margin-bottom: 2rem; /* lifts it slightly above footer visually */
+}
+
+.footer-right a {
+  color: #fff; /* or whatever color */
+  font-size: 24px;
+  margin-left: 10px;
+  transition: transform 0.2s;
+}
+
+.footer-right a:hover {
+  transform: scale(1.2);
+  color: #b5852f; /* hover color */
+}

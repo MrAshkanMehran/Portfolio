@@ -5,47 +5,124 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Design Survey – Ashkan Mehran</title>
   <link rel="stylesheet" href="survey.css">
+    <!-- Font awesome preload-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+  <!-- Header -->
   <header class="column-header">
     <div class="logo-wrap">
-      <a href="../index.html"><img src="../Images/hero-portrait.jpg" alt="Logo" class="logo"></a>
+      <a href="../Portfolio/portfolio.html"><img src="../Portfolio/Images/hero-portrait.jpg" alt="Logo" class="logo"></a>
     </div>
     <nav class="main-nav">
       <ul>
-        <li><a href="../index.html#hero">Home</a></li>
-        <li><a href="../index.html#projects">Back to Projects</a></li>
+        <li><a href="../Portfolio/portfolio.html#hero">Home</a></li>
+        <li><a href="../Portfolio/portfolio.html#projects">Back to Projects</a></li>
       </ul>
     </nav>
   </header>
-
   <div id="site">
-    <main class="container">
-      <h1 class="pagetitle"><b>Survey Form</b></h1>
-      <div class="project-description center-text">
-        <p>This survey form is a fully responsive, user-friendly interface built using HTML5 and modern CSS.</p>
-      </div>
-      <form id="survey-form">
-        <!-- Form fields as before -->
-      </form>
-    </main>
-  </div>
+   <!-- MAIN CONTENT -->
+  <main class="container">
 
-  <footer class="site-footer">
-    <div class="footer-inner container">
-      <div class="footer-center">
-        <p>© <span id="year"></span> Ashkan Mehran. All Rights Reserved.</p>
+    <h1 class="pagetitle"><b>Survey Form</b></h1>
+    <div class="project-description center-text">
+    <p class="form-description">
+    This survey form is a fully responsive, user-friendly interface built using HTML5 and modern CSS. 
+    It collects essential user feedback, including personal details, preferences, and suggestions, 
+    while maintaining accessibility and clean design standards. Ideal for gathering actionable insights 
+    to improve services efficiently.
+    </p>
+    </div>
+    <h1 class="formtitle">AM Design Survey Form</h1>
+    <p id="description" class="center-text">Thank you for taking the time to help improve our service.</p>
+    <form id="survey-form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
       </div>
-      <div class="footer-right">
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="number">Age <span class="clue">(optional)</span></label>
+        <input type="number" id="number" class="form-control" min="10" max="99" placeholder="Age">
+      </div>
+
+      <div class="form-group">
+        <p>Which option best describes your current role?</p>
+        <select id="dropdown" class="form-control" required>
+          <option disabled selected value>Select current role</option>
+          <option value="student">Student</option>
+          <option value="job">Full Time Job</option>
+          <option value="learner">Full Time Learner</option>
+          <option value="preferNo">Prefer not to say</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <p>Would you recommend AM Design to a friend?</p>
+        <label><input type="radio" name="user-recommend" value="definitely" class="input-radio" checked>Definitely</label>
+        <label><input type="radio" name="user-recommend" value="maybe" class="input-radio">Maybe</label>
+        <label><input type="radio" name="user-recommend" value="not-sure" class="input-radio">Not sure</label>
+      </div>
+
+      <div class="form-group">
+        <p>What is your favorite feature of AM Design?</p>
+        <select id="most-like" class="form-control" required>
+          <option disabled selected value>Select an option</option>
+          <option value="challenges">Challenges</option>
+          <option value="projects">Projects</option>
+          <option value="community">Community</option>
+          <option value="openSource">Open Source</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <p>What would you like to see improved? <span class="clue">(Check all that apply)</span></p>
+        <label><input type="checkbox" class="input-checkbox">Front-end Projects</label>
+        <label><input type="checkbox" class="input-checkbox">Back-end Projects</label>
+        <label><input type="checkbox" class="input-checkbox">Data Visualization</label>
+        <label><input type="checkbox" class="input-checkbox">Challenges</label>
+        <label><input type="checkbox" class="input-checkbox">Open Source Community</label>
+        <label><input type="checkbox" class="input-checkbox">Gitter Help Rooms</label>
+        <label><input type="checkbox" class="input-checkbox">Videos</label>
+        <label><input type="checkbox" class="input-checkbox">City Meetups</label>
+        <label><input type="checkbox" class="input-checkbox">Wiki</label>
+        <label><input type="checkbox" class="input-checkbox">Forum</label>
+        <label><input type="checkbox" class="input-checkbox">Additional Courses</label>
+      </div>
+
+      <div class="form-group">
+        <p>Any comments or suggestions?</p>
+        <textarea id="comments" class="input-textarea" placeholder="Enter your comment here..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="submit-button center-btn">Submit</button>
+      </div>
+    </form>
+  </main>
+  </div>
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+      <div class="footer-inner container">
+        <div class="footer-center">
+          <p>© <span id="year"></span> Ashkan Mehran. All Rights Reserved.</p>
+        </div>
+        <div class="footer-right">
         <a href="https://www.facebook.com/MrAshkanMehran" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
         <a href="https://x.com/ashkan_mehran" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+        </div>
       </div>
-    </div>
-  </footer>
-
+    </footer>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-</body>
-</html>
+
+  </body>
+  </html>
